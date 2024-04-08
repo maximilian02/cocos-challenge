@@ -17,7 +17,13 @@ export function App() {
         <Card title="Buscar" type={3} section="/search" />
         <Card title="Ordenes" type={4} section="/orders" />
       </ul>
-      <h3>Max Zelarayán @ github.com/maximilian02</h3>
+      <div className="footer">
+        <h4>
+          <a href="https://github.com/maximilian02" target="_blank">
+            Max Zelarayán @ github.com/maximilian02
+          </a>
+        </h4>
+      </div>
     </>
   );
 }

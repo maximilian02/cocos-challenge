@@ -28,6 +28,9 @@
 .cards__item {
   display: flex;
   padding: 1rem;
+  &:hover .card__title {
+    opacity: 0.75;
+  }
 }
 
 .card {
@@ -42,13 +45,6 @@
       filter: contrast(100%);
     }
   }
-}
-
-.card__content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
 }
 
 .card__image {
@@ -74,7 +70,7 @@
 }
 
 .card__image--1 {
-  background-image: url(https://unsplash.it/800/600?image=82);
+  background-image: url(https://unsplash.it/800/600?image=13);
 }
 
 .card__image--2 {
@@ -89,9 +85,18 @@
   background-image: url(https://unsplash.it/800/600?image=59);
 }
 
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  margin-left: 32px;
+}
+
 .card__title {
   color: black;
-  font-size: 1.25rem;
+  font-size: 1.85rem;
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
