@@ -1,29 +1,29 @@
-import cocosLogo from "./assets/cocos.svg";
+import { Router, Route } from "preact-router";
+import { Home } from "./screens/Home";
+import { Instruments } from "./screens/Instruments";
+import { Sidebar } from "./components/Sidebar";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 import "./app.scss";
-import { Card } from "./components/Card";
 
 export function App() {
   return (
     <>
-      <div>
-        <a href="https://cocoscap.com/" target="_blank">
-          <img src={cocosLogo} className="logo" alt="Vite logo" />
-        </a>
+      <div class="wrapper">
+        <aside>
+          <Header />
+          <Sidebar />
+        </aside>
+        <main>
+          <div class="wrapper_inner">
+            <Router>
+              <Route path="/" component={Home} />
+              <Route path="/instruments" component={Instruments} />
+            </Router>
+          </div>
+        </main>
       </div>
-      <h1>Cocos Challenge App</h1>
-      <ul class="cards">
-        <Card title="Instrumentos" type={1} section="/instruments" />
-        <Card title="Portfolio" type={2} section="/portfolio" />
-        <Card title="Buscar" type={3} section="/search" />
-        <Card title="Ordenes" type={4} section="/orders" />
-      </ul>
-      <div className="footer">
-        <h4>
-          <a href="https://github.com/maximilian02" target="_blank">
-            Max Zelarayán @ github.com/maximilian02
-          </a>
-        </h4>
-      </div>
+      <Footer />
     </>
   );
 }
