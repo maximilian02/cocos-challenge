@@ -1,33 +1,23 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import cocosLogo from "./assets/cocos.svg";
+import "./app.scss";
+import { Card } from "./components/Card";
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
+        <a href="https://cocoscap.com/" target="_blank">
+          <img src={cocosLogo} className="logo" alt="Vite logo" />
         </a>
       </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      <h1>Cocos Challenge App</h1>
+      <ul class="cards">
+        <Card title="Instrumentos" type={1} section="/instruments" />
+        <Card title="Portfolio" type={2} section="/portfolio" />
+        <Card title="Buscar" type={3} section="/search" />
+        <Card title="Ordenes" type={4} section="/orders" />
+      </ul>
+      <h3>Max Zelarayán @ github.com/maximilian02</h3>
     </>
-  )
+  );
 }
