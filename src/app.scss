@@ -1,19 +1,7 @@
 #app {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  padding-left: 0;
-}
-
-.card {
-  width: 300px;
-  padding: 1em;
 }
 
 a {
@@ -23,9 +11,5 @@ a {
 }
 
 a:hover {
-  color: #36c;
-}
-
-.header {
-  padding: 24px;
+  color: rgb(149, 149, 149);
 }
