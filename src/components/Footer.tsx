@@ -7,5 +7,5 @@ export function Footer() {
         </a>
       </h4>
     </div>
-  );
+  )
 }

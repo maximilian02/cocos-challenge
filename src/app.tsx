@@ -1,9 +1,9 @@
-import { Router, Route } from "preact-router";
-import { Home } from "./screens/Home";
-import { Instruments } from "./screens/Instruments";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import "./app.scss";
+import { Router, Route } from "preact-router"
+import { Home } from "./screens/Home"
+import { Instruments } from "./screens/Instruments"
+import { Footer } from "./components/Footer"
+import { Header } from "./components/Header"
+import "./app.scss"
 
 export function App() {
   return (
@@ -21,5 +21,5 @@ export function App() {
       </div>
       <Footer />
     </>
-  );
+  )
 }

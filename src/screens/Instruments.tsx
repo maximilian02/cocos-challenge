@@ -1,4 +1,4 @@
-import { Card } from "../components/Card";
+import { Card } from "../components/Card"
 
 export function Instruments() {
   return (
@@ -8,5 +8,5 @@ export function Instruments() {
         <Card title="Instrumentos" type={1} section="/instruments" />
       </ul>
     </>
-  );
+  )
 }

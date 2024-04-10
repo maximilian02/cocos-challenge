@@ -1,4 +1,4 @@
-import { Card } from "../components/Card";
+import { Card } from "../components/Card"
 
 export function Home() {
   return (
@@ -11,5 +11,5 @@ export function Home() {
         <Card title="Ordenes" type={4} section="/orders" />
       </ul>
     </>
-  );
+  )
 }

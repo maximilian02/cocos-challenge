@@ -1,10 +1,10 @@
-import "./Card.scss";
+import "./Card.scss"
 
 type CardProps = {
-  title: string;
-  type: number;
-  section: string;
-};
+  title: string
+  type: number
+  section: string
+}
 
 export function Card({
   title = "Placeholder",
@@ -24,5 +24,5 @@ export function Card({
         </a>
       </li>
     </>
-  );
+  )
 }

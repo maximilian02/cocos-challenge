@@ -1,7 +1,8 @@
 #app {
+  width: 100%;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  overflow-y: scroll;
 }
 
 a {
