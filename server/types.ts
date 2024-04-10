@@ -16,8 +16,13 @@ export type Instrument = {
   close_price: number
 }
 
-export interface Portfolio {
-  position: Array<Asset>
+export type PortfolioItem = {
+  instrument_id: number
+  ticker: string
+  quantity: number
+  last_price: number
+  close_price: number
+  avg_cost_price: number
 }
 
 export interface OrderOperation {
