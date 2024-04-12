@@ -29,8 +29,18 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   min-height: 632px;
   height: 100%;
+  width: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+  }
 }
 
 ul {
@@ -58,11 +68,8 @@ aside {
 .wrapper {
   @extend .flex;
   justify-content: center;
-}
-
-.wrapper_inner {
-  width: auto;
-  text-align: center;
+  width: min(900px, 100% - 3rem);
+  margin-inline: auto;
 }
 
 .footer {
@@ -72,6 +79,10 @@ aside {
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
+
+  h4 {
+    padding: 0;
+  }
 }
 
 .logo {
@@ -88,8 +99,9 @@ aside {
 
 .header {
   @extend .flex;
-  padding: 24px;
+  padding: 4px;
   padding-top: 0;
+  justify-content: center;
 
   a {
     text-align: center;

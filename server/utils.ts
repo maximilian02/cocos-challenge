@@ -1,5 +1,5 @@
 import axios from "axios"
-import type { OrderOperation } from "./types"
+import type { OrderOperation } from "../src/types"
 const PORTFOLIO_GET_URL = "https://dummy-api-topaz.vercel.app/portfolio"
 const INSTRUMENTS_GET_URL = "https://dummy-api-topaz.vercel.app/instruments"
 const SEARCH_GET_URL = (ticker: string) =>

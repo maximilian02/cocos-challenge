@@ -1,14 +1,14 @@
 import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 import { TableViz } from "../components/TableViz"
-import { INSTRUMENTS_GET_URL } from "../screens/Utils"
+import { PORTFOLIO_GET_URL } from "../screens/Utils"
 
-const fetchInstruments = async () => axios.get(INSTRUMENTS_GET_URL)
+const fetchPortfolio = async () => axios.get(PORTFOLIO_GET_URL)
 
-export function Instruments() {
+export function Portfolio() {
   const { data, isLoading } = useQuery({
-    queryFn: () => fetchInstruments(),
-    queryKey: ["instruments"],
+    queryFn: () => fetchPortfolio(),
+    queryKey: ["portfolio"],
   })
 
   if (isLoading) {
@@ -18,7 +18,7 @@ export function Instruments() {
   return (
     <>
       {/*  TODO: Fix naming to avoid double data.data */}
-      <TableViz list={data?.data} name="Listado de instrumentos" />
+      <TableViz list={data?.data} type="portfolio" name="Listado de activos" />
     </>
   )
 }
