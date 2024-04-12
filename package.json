@@ -10,6 +10,7 @@
     "server": "npx tsx server/index.ts"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.29.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "preact": "^10.19.6",

@@ -1,12 +1,17 @@
 import express from "express"
 import { getInstruments, getPortfolio, getSearch, postOrders } from "./utils"
 import type { Instrument, PortfolioItem } from "./types"
+import cors from "cors"
+
+const CLIENT_URL = "http://localhost:5173"
 
 const app = express()
 const port = 3000
 
 // Disclaimer:  just a very dummy set of endpoints
 // to get and deliver the challenge data
+
+app.use(cors({ origin: CLIENT_URL }))
 
 app.get("/instruments", async (req, res) => {
   const result = await getInstruments()
