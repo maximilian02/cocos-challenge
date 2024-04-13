@@ -114,6 +114,28 @@ aside {
   }
 }
 
+.search {
+  @extend .flex;
+  width: 100%;
+  input,
+  button {
+    color: inherit;
+    padding: 12px 10px;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
 @media (max-width: 500px) {
   .header {
     flex-direction: column;

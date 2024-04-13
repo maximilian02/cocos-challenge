@@ -18,7 +18,11 @@ export function Portfolio() {
   return (
     <>
       {/*  TODO: Fix naming to avoid double data.data */}
-      <TableViz list={data?.data} type="portfolio" name="Listado de activos" />
+      <TableViz
+        list={data?.data}
+        type="portfolio"
+        name="Portfolio - Listado de activos"
+      />
     </>
   )
 }

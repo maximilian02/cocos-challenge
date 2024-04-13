@@ -31,30 +31,25 @@ export function TableViz({
         <th>Último precio</th>
         <th>Retorno</th>
       </tr>
-      {list?.map((item: Instrument) => (
-        <tr>
-          <td data-cell="Ticket">{item.ticker}</td>
-          <td data-cell="Nombre" className="name">
-            {item.name}
-          </td>
-          <td data-cell="Último precio">{item.last_price}</td>
-          <td data-cell="Retorno">
-            {earningReturn(item.last_price, item.close_price)}
-          </td>
-        </tr>
-      ))}
+      {list.length > 0 ? (
+        list?.map((item: Instrument) => (
+          <tr>
+            <td data-cell="Ticket">{item.ticker}</td>
+            <td data-cell="Nombre" className="name">
+              {item.name}
+            </td>
+            <td data-cell="Último precio">{item.last_price}</td>
+            <td data-cell="Retorno">
+              {earningReturn(item.last_price, item.close_price)}
+            </td>
+          </tr>
+        ))
+      ) : (
+        <div class="no-results">No encontramos resultados.</div>
+      )}
     </>
   )
-  {
-    /* <td data-cell="Ticket">{item.ticker}</td>
-          <td data-cell="Nombre" className="name">
-            {item.name}
-          </td>
-          <td data-cell="Último precio">{item.last_price}</td>
-          <td data-cell="Retorno">
-            {earningReturn(item.last_price, item.close_price)}
-          </td> */
-  }
+
   const portfolioRowSet = () => (
     <>
       <tr>
@@ -64,19 +59,25 @@ export function TableViz({
         <th>Ganancia</th>
         <th>Rendimiento total</th>
       </tr>
-      {list?.map((item: PortfolioItem) => (
-        <tr>
-          <td data-cell="Ticker">{item.ticker}</td>
-          <td data-cell="Cantidad">{item.quantity}</td>
-          <td data-cell="Valor de mercado">{item.avg_cost_price}</td>
-          <td data-cell="Ganancia">
-            {earningReturn(item.avg_cost_price, item.close_price)}
-          </td>
-          <td data-cell="Rendimiento">
-            {earningReturn(item.last_price, item.close_price)}
-          </td>
-        </tr>
-      ))}
+      {list.length > 0 ? (
+        list?.map((item: PortfolioItem) => (
+          <tr>
+            <td data-cell="Ticker">{item.ticker}</td>
+            <td data-cell="Cantidad">{item.quantity}</td>
+            <td data-cell="Valor de mercado">
+              {item.quantity & item.last_price}
+            </td>
+            <td data-cell="Ganancia">
+              {earningReturn(item.close_price, item.avg_cost_price)}
+            </td>
+            <td data-cell="Rendimiento">
+              {earningReturn(item.last_price, item.close_price)}
+            </td>
+          </tr>
+        ))
+      ) : (
+        <div>No encontramos resultados.</div>
+      )}
     </>
   )
 

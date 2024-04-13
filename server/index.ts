@@ -28,6 +28,11 @@ app.get("/search/:ticker", async (req, res) => {
   res.json(result as Instrument[])
 })
 
+app.get("/search/", async (req, res) => {
+  const result = await getInstruments()
+  res.json(result as Instrument[])
+})
+
 app.post("/orders", async (req, res) => {
   // const result = await postOrders(req.body.data)
   res.json({ result: "OKAY" })
