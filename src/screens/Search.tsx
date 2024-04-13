@@ -28,8 +28,13 @@ export function Search(props: any) {
     setTicker(event?.currentTarget.value.toUpperCase())
   }
 
+  const searchAction = async () => {
+    route(`/search/${ticker}`)
+    refetch()
+  }
+
   useEffect(() => {
-    route(`/search/${ticker}`, true)
+    route(`/search/${ticker}`)
     refetch()
   }, [ticker])
 
@@ -49,6 +54,7 @@ export function Search(props: any) {
           onChange={changeHandler}
           ref={inputRef}
         />
+        <button onClick={searchAction}>Buscar</button>
       </div>
       <TableViz
         list={ticker ? data?.data : dataInstruments?.data}
