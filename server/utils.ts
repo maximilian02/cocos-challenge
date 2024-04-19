@@ -40,6 +40,7 @@ const postOrders = async (orderData: OrderOperation) =>
   axios
     .post(ORDERS_POST_URL, orderData)
     .then((res) => {
+      console.log("asdfasd", res.data)
       return [...res.data]
     })
     .catch((err) => {

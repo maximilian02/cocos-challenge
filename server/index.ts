@@ -1,7 +1,8 @@
 import express from "express"
 import { getInstruments, getPortfolio, getSearch, postOrders } from "./utils"
-import type { Instrument, PortfolioItem } from "./types"
+import type { Instrument, PortfolioItem } from "../src/types"
 import cors from "cors"
+import bodyParser from "body-parser"
 
 const CLIENT_URL = "http://localhost:5173"
 
@@ -10,8 +11,9 @@ const port = 3000
 
 // Disclaimer:  just a very dummy set of endpoints
 // to get and deliver the challenge data
-
 app.use(cors({ origin: CLIENT_URL }))
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
 
 app.get("/instruments", async (req, res) => {
   const result = await getInstruments()
@@ -34,8 +36,8 @@ app.get("/search/", async (req, res) => {
 })
 
 app.post("/orders", async (req, res) => {
-  // const result = await postOrders(req.body.data)
-  res.json({ result: "OKAY" })
+  const result = await postOrders(req.body.data)
+  res.json(result)
 })
 
 app.get("/*", (req, res) => {

@@ -6,6 +6,7 @@ import { Portfolio } from "./screens/Portfolio"
 import { Search } from "./screens/Search"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
+import { Orders } from "./screens/Orders"
 import "./app.scss"
 
 const queryClient = new QueryClient()
@@ -22,6 +23,7 @@ export function App() {
               <Route path="/instruments" component={Instruments} />
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/search/:ticker?" component={Search} />
+              <Route path="/orders/" component={Orders} />
             </Router>
           </main>
         </div>

@@ -1,3 +1,7 @@
+const ORDER_STATUS_PENDING = "**PENDING**"
+const ORDER_STATUS_FILLED = "**FILLED**"
+const ORDER_STATUS_REJECTED = "**REJECTED**"
+
 export type Asset = {
   instrument_id: number
   ticker: string
@@ -27,7 +31,7 @@ export type PortfolioItem = {
 
 export interface OrderOperation {
   instrument_id: number
-  side: "BUY" | "SELL"
+  side: string
   type: "MARKET" | "LIMIT"
   quantity: number
   price?: number

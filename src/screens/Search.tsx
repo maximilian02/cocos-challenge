@@ -44,7 +44,6 @@ export function Search(props: any) {
 
   return (
     <>
-      {/*  TODO: Fix naming to avoid double data.data */}
       <div className="search">
         <input
           autoFocus
@@ -56,6 +55,7 @@ export function Search(props: any) {
         />
         <button onClick={searchAction}>Buscar</button>
       </div>
+      {/*  TODO: Fix naming to avoid double data.data */}
       <TableViz
         list={ticker ? data?.data : dataInstruments?.data}
         name="Listado de activos"
